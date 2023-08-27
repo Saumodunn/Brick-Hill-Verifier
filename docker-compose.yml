@@ -1,0 +1,13 @@
+version: '3.8'
+services:
+  verifier:
+    build: .
+    container_name: verifier
+    restart: unless-stopped
+    environment:
+      - PREFIX=!
+      - DISCORD_GUILD=${DISCORD_GUILD}
+      - DISCORD_TOKEN=${DISCORD_TOKEN}
+      - AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID}
+      - AWS_SECRET_ACCESS_KEY=${AWS_SECRET_ACCESS_KEY}
+      - NODE_ENV=production
